@@ -1,0 +1,56 @@
+{
+  "name": "@totominc/eslint-config-react",
+  "version": "0.4.4",
+  "description": "Personal ESLint config for React (JavaScript and TypeScript projects).",
+  "author": "TotomInc <cazade.thomas@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "base.js",
+    "index.js",
+    "jest.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TotomInc/eslint-configs.git"
+  },
+  "homepage": "https://github.com/TotomInc/eslint-configs#readme",
+  "keywords": [
+    "eslint",
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/TotomInc/eslint-configs/issues"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jest": "^24.4.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.26.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-testing-library": "^4.12.4",
+    "prettier": "^2.4.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "gitHead": "0e0fd5fb25ff78a35c6e55198162ca23eff0c39d",
+  "dependencies": {
+    "confusing-browser-globals": "^1.0.10"
+  }
+}

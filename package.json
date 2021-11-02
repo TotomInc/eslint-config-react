@@ -1,12 +1,11 @@
 {
   "name": "@totominc/eslint-config-react",
   "version": "0.4.4",
-  "description": "Personal ESLint config for React (JavaScript and TypeScript projects).",
+  "description": "Personal ESLint config for React + TypeScript projects.",
   "author": "TotomInc <cazade.thomas@gmail.com>",
   "license": "MIT",
   "main": "index.js",
   "files": [
-    "base.js",
     "index.js",
     "jest.js",
     "LICENSE",

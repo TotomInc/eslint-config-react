@@ -9,88 +9,31 @@ const restrictedGlobals = require('confusing-browser-globals');
 
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: [require.resolve('./base')],
-
-  plugins: ['eslint-comments', 'jsx-a11y', 'prettier'],
-
   extends: [
+    'eslint:recommended',
     'plugin:eslint-comments/recommended',
     'plugin:promise/recommended',
-
-    'airbnb',
-    'airbnb/hooks',
-
     'plugin:jsx-a11y/recommended',
-
-    'eslint:recommended',
-
+    'airbnb',
+    'airbnb-typescript',
     'plugin:prettier/recommended',
   ],
 
-  overrides: [
-    {
-      files: ['**/*.ts?(x)'],
+  parser: '@typescript-eslint/parser',
 
-      parser: '@typescript-eslint/parser',
-
-      parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-        warnOnUnsupportedTypeScriptVersion: true,
-        project: ['./tsconfig.json'],
-      },
-
-      plugins: ['@typescript-eslint', 'eslint-comments', 'jsx-a11y', 'prettier'],
-
-      extends: [
-        'plugin:eslint-comments/recommended',
-        'plugin:promise/recommended',
-
-        'airbnb-typescript',
-        'airbnb/hooks',
-
-        'plugin:jsx-a11y/recommended',
-
-        'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-
-        'plugin:prettier/recommended',
-      ],
-
-      rules: {
-        // TypeScript's `noFallthroughCasesInSwitch` option is more robust
-        'default-case': 'off',
-        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/291)
-        'no-dupe-class-members': 'off',
-        // 'tsc' already handles this (https://github.com/typescript-eslint/typescript-eslint/issues/477)
-        'no-undef': 'off',
-
-        'import/prefer-default-export': 'off',
-
-        // Add TypeScript specific rules (and turn off ESLint equivalents)
-        '@typescript-eslint/consistent-type-assertions': 'warn',
-        'no-array-constructor': 'off',
-        '@typescript-eslint/no-array-constructor': 'warn',
-        'no-redeclare': 'off',
-        '@typescript-eslint/no-redeclare': 'warn',
-        'no-useless-constructor': 'off',
-        '@typescript-eslint/no-useless-constructor': 'warn',
-      },
-    },
-  ],
+  env: {
+    browser: true,
+    es6: true,
+    node: true,
+  },
 
   // NOTE: When adding rules here, you need to make sure they are compatible with
   // `typescript-eslint`, as some rules such as `no-array-constructor` aren't compatible.
   rules: {
+    // Prefer to use named exports instead of default exports.
     'import/prefer-default-export': 'off',
 
-    // Deprecated rule from jsx-a11y
-    'jsx-a11y/accessible-emoji': 'off',
-
+    // Custom prettier config.
     'prettier/prettier': [
       'error',
       {
@@ -114,7 +57,10 @@ module.exports = {
       },
     ],
 
-    'no-restricted-globals': ['error'].concat(restrictedGlobals),
+    // Do not force destructuring.
     'prefer-destructuring': 'off',
+
+    // Avoid confusing globals.
+    'no-restricted-globals': ['error'].concat(restrictedGlobals),
   },
 };

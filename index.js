@@ -27,11 +27,13 @@ module.exports = {
     node: true,
   },
 
-  // NOTE: When adding rules here, you need to make sure they are compatible with
-  // `typescript-eslint`, as some rules such as `no-array-constructor` aren't compatible.
   rules: {
     // Prefer to use named exports instead of default exports.
     'import/prefer-default-export': 'off',
+
+    // Disable no props spreading React rule, as it's a common pattern in React
+    // that can be used for very specific cases (e.g. atomic UI components).
+    'react/jsx-props-no-spreading': 'off',
 
     // Custom prettier config.
     'prettier/prettier': [

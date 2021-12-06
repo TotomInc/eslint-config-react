@@ -1,0 +1,13 @@
+lockfileVersion: 5.3
+
+specifiers:
+  confusing-browser-globals: ^1.0.10
+
+dependencies:
+  confusing-browser-globals: 1.0.10
+
+packages:
+
+  /confusing-browser-globals/1.0.10:
+    resolution: {integrity: sha512-gNld/3lySHwuhaVluJUKLePYirM3QNCKzVxqAdhJII9/WXKVX5PURzMVJspS1jTslSqjeuG4KMVTSouit5YPHA==}
+    dev: false

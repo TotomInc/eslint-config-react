@@ -31,6 +31,9 @@ module.exports = {
     // Prefer to use named exports instead of default exports.
     'import/prefer-default-export': 'off',
 
+    // Prefer arrow-function when defining a React functional component.
+    'react/function-component-definition': [2, { "namedComponents": "arrow-function" }],
+
     // Disable no props spreading React rule, as it's a common pattern in React
     // that can be used for very specific cases (e.g. atomic UI components).
     'react/jsx-props-no-spreading': 'off',

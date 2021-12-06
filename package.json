@@ -1,6 +1,6 @@
 {
   "name": "@totominc/eslint-config-react",
-  "version": "0.4.7",
+  "version": "0.5.0-rc1",
   "description": "Personal ESLint config for React + TypeScript projects.",
   "author": "TotomInc <cazade.thomas@gmail.com>",
   "license": "MIT",

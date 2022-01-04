@@ -22,17 +22,30 @@ This is an ESLint config which works only for TypeScript projects _(untested at 
    npx install-peerdeps --dev @totominc/eslint-config-react
    ```
 
-2. Create an `.eslintrc.js` file at the root of your project.T hen you can extend the ESLint configuration `@totominc/eslint-config-react` like below:
+2. Create an `.eslintrc.js` file at the root of your project. Then you can extend the ESLint configuration `@totominc/eslint-config-react` like below:
 
-   ```js
-   module.exports = {
-      extends: ['@totominc/react'],
+  ```js
+  module.exports = {
+    extends: ['@totominc/react'],
 
-      parserOptions: {
-        project: './tsconfig.json',
+    parserOptions: {
+      project: './tsconfig.json',
+    },
+
+    settings: {
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
       },
-   };
-   ```
+
+      'import/resolver': {
+        typescript: {
+          alwaysTryTypes: true,
+          project: 'tsconfig.json',
+        },
+      },
+    },
+  };
+  ```
 
 ### Jest & Testing-Library support
 

@@ -48,7 +48,7 @@ module.exports = {
         endOfLine: 'lf',
         htmlWhitespaceSensitivity: 'css',
         insertPragma: false,
-        jsxBracketSameLine: false,
+        bracketSameLine: false,
         jsxSingleQuote: false,
         printWidth: 120,
         proseWrap: 'never',

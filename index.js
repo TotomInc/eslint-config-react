@@ -16,6 +16,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'airbnb',
     'airbnb-typescript',
+    'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
   ],
 

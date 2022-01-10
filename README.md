@@ -59,6 +59,16 @@ module.exports = {
 
 Jest ESLint rules will only applies on the test files matching `**/__tests__/**/*` and `**/*.{spec,test}.*`.
 
+### Next.js support
+
+For Next.js project, we also provide a custom ESLint config which you can extend by doing the following:
+
+```js
+module.exports = {
+   extends: ['@totominc/react', '@totominc/react/next'],
+};
+```
+
 ## License
 
 MIT license, please see the LICENSE file in this project.

@@ -41,6 +41,12 @@ module.exports = {
     // that can be used for very specific cases (e.g. atomic UI components).
     'react/jsx-props-no-spreading': 'off',
 
+    // Not needed since React v17.
+    'react/jsx-uses-react': 'off',
+
+    // Not needed since React v17.
+    'react/react-in-jsx-scope': 'off',
+
     // Custom prettier config.
     'prettier/prettier': ['error', { ...prettierConfig }],
 

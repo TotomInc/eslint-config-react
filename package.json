@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "index.js",
   "files": [
+    ".prettierrc.js",
     "index.js",
     "jest.js",
     "next.js",

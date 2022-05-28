@@ -7,6 +7,8 @@
 // To use them, explicitly reference them, e.g. `window.name` or `window.status`.
 const restrictedGlobals = require('confusing-browser-globals');
 
+const prettierConfig = require("./.prettierrc");
+
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   extends: [
@@ -40,28 +42,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
 
     // Custom prettier config.
-    'prettier/prettier': [
-      'error',
-      {
-        arrowParens: 'always',
-        bracketSpacing: true,
-        endOfLine: 'lf',
-        htmlWhitespaceSensitivity: 'css',
-        insertPragma: false,
-        bracketSameLine: false,
-        jsxSingleQuote: false,
-        printWidth: 120,
-        proseWrap: 'never',
-        quoteProps: 'consistent',
-        requirePragma: false,
-        semi: true,
-        singleQuote: true,
-        tabWidth: 2,
-        trailingComma: 'all',
-        useTabs: false,
-        vueIndentScriptAndStyle: false,
-      },
-    ],
+    'prettier/prettier': ['error', { ...prettierConfig }],
 
     // Do not force destructuring.
     'prefer-destructuring': 'off',

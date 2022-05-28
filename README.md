@@ -16,16 +16,14 @@
 In order to work around [a known limitation in ESLint](https://github.com/eslint/eslint/issues/3458), we recommend you to use this package alongside `@rushstack/eslint-patch`, so that you don't have to install too many dependencies:
 
 ```bash
-npm add --dev @totominc/eslint-config-react @rushstack/eslint-patch
+npm add --dev @totominc/eslint-config-react @rushstack/eslint-patch prettier eslint
 ```
 
 Please also make sure that you have `prettier` and `eslint` installed.
 
 ## Usage
 
-This is an ESLint config which works only for TypeScript projects _(untested at the moment with React + JavaScript projects)_.
-
-1. Create an `.eslintrc.js` file at the root of your project. Extend the ESLint configuration `@totominc/eslint-config-react` like below:
+Create an `.eslintrc.js` file at the root of your project and add the following configuration:
 
   ```js
   require("@rushstack/eslint-patch/modern-module-resolution");
@@ -35,19 +33,6 @@ This is an ESLint config which works only for TypeScript projects _(untested at 
 
     parserOptions: {
       project: './tsconfig.json',
-    },
-
-    settings: {
-      'import/parsers': {
-        '@typescript-eslint/parser': ['.ts', '.tsx'],
-      },
-
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-          project: 'tsconfig.json',
-        },
-      },
     },
   };
   ```
@@ -70,7 +55,7 @@ For Next.js project, we also provide a custom ESLint config which you can extend
 
 ```js
 module.exports = {
-   extends: ['@totominc/react', '@totominc/react/next'],
+  extends: ['@totominc/react', '@totominc/react/next'],
 };
 ```
 

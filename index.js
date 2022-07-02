@@ -68,6 +68,10 @@ module.exports = {
 
     "promise/always-return": "warn",
 
+    // Especially with React component, we like to have all our functions inside the component
+    // function declaration, even if those functions can be scoped outside the component declaration.
+    "unicorn/consistent-function-scoping": "off",
+
     // We can have some specific file-naming convention with React projects.
     "unicorn/filename-case": "off",
 

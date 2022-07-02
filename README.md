@@ -2,24 +2,25 @@
 
 ## About this configuration
 
-- `airbnb` + `airbnb-typescript`: based on the Airbnb code-styleguide both TypeScript, with adaptations for React projects.
-- `jsx-a11y`: enforce a11y best-practices.
-- `promise`: enforce best-practices around JS promises.
-- `eslint-comments`: better control over `// eslint` comments and avoid disabling all ESLint rule abuse.
-- `prettier`: an opinionated code-styleguide which is pre-configured. It is possible to overwrite this for your personal preference.
-- `jest`: enforce best-practices when writing unit-tests with `Jest`.
-- `prettier-plugin-tailwindcss`: a Prettier plugin for Tailwind CSS v3.0+ that automatically sorts classes based on [their recommended class order](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier#how-classes-are-sorted).
 - `eslint:recommended`: recommended ESLint rules.
+- `eslint-airbnb` + `eslint-airbnb-typescript`: based on the Airbnb code-styleguide both TypeScript, with adaptations for React projects.
+- `eslint-jsx-a11y`: enforce a11y best-practices.
+- `eslint-react-hooks`: rules to help you enforce [Rules of Hooks](https://reactjs.org/docs/hooks-rules.html) and avoid common issues.
+- `eslint-comments`: better control over ESLint comments to avoid ESLint comments disable abuse.
+- `eslint-unicorn`: some more powerful and stricter rules for JavaScript.
+- `eslint-promise`: enforce best-practices around JS promises.
+- `eslint-jest`: enforce best-practices when writing unit-tests with `Jest`.
+- `prettier`: an opinionated code-styleguide which is pre-configured. It is possible to overwrite this for your personal preference.
+- `prettier-plugin-tailwindcss`: a Prettier plugin for TailwindCSS v3.0+ that automatically sorts classes based on [their recommended class order](https://tailwindcss.com/blog/automatic-class-sorting-with-prettier#how-classes-are-sorted).
+- Some extra stuff such as lintint JSON and YML files.
 
 ## Installation
 
-In order to work around [a known limitation in ESLint](https://github.com/eslint/eslint/issues/3458), we recommend you to use this package alongside `@rushstack/eslint-patch`, so that you don't have to install too many dependencies:
+In order to work around [a known limitation in ESLint](https://github.com/eslint/eslint/issues/3458), we recommend you to use `@rushstack/eslint-patch` so that you don't have to manage ESLint dependencies by yourself.
 
 ```bash
 npm add --dev @totominc/eslint-config-react @rushstack/eslint-patch prettier eslint
 ```
-
-Please also make sure that you have `prettier` and `eslint` installed.
 
 ## Usage
 
@@ -29,10 +30,11 @@ Create an `.eslintrc.js` file at the root of your project and add the following 
   require("@rushstack/eslint-patch/modern-module-resolution");
 
   module.exports = {
+    root: true,
     extends: ['@totominc/react'],
-
     parserOptions: {
-      project: './tsconfig.json',
+      tsconfigRootDir: __dirname,
+      project: ['./tsconfig.json'],
     },
   };
   ```
@@ -58,6 +60,50 @@ module.exports = {
   extends: ['@totominc/react', '@totominc/react/next'],
 };
 ```
+
+## FAQ
+
+### I want to register custom path aliases
+
+```bash
+# Install ESLint plugin to resolve alias imports.
+npm i --save-dev eslint-import-resolver-alias
+```
+
+```javascript
+module.exports = {
+  settings: {
+    // Register `@/` as an import alias to `src/**/*`.
+    "import/resolver": {
+      alias: {
+        map: [['@', './src/']],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
+};
+```
+
+### I have multiple `tsconfig.json` files
+
+```javascript
+module.exports = {
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    project: ['./tsconfig.json', './tsconfig.web.json'],
+  },
+};
+```
+
+However, if you have multiple `tsconfig.json` files, we recommend you to create a dedicated `tsconfig.json` file for ESLint such as `tsconfig.eslint.json`:
+
+- https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/parser/README.md#parseroptionsproject
+- https://github.com/typescript-eslint/typescript-eslint/blob/main/tsconfig.eslint.json
+- https://typescript-eslint.io/docs/linting/monorepo/#one-root-tsconfigjson
+
+### I am getting error "The file must be included in at least one of the projects provided"
+
+Please follow this explanation from [the official @typescript-eslint documentation](https://typescript-eslint.io/docs/linting/type-linting/#i-get-errors-telling-me-the-file-must-be-included-in-at-least-one-of-the-projects-provided).
 
 ## License
 

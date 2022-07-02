@@ -6,12 +6,10 @@
   "license": "MIT",
   "main": "index.js",
   "files": [
-    ".prettierrc.js",
+    "extra.js",
     "index.js",
     "jest.js",
-    "next.js",
-    "LICENSE",
-    "README.md"
+    "next.js"
   ],
   "publishConfig": {
     "access": "public"
@@ -29,8 +27,6 @@
     "url": "https://github.com/TotomInc/eslint-configs/issues"
   },
   "dependencies": {
-    "@babel/core": "^7.18.2",
-    "@babel/eslint-parser": "^7.18.2",
     "@next/eslint-plugin-next": "^12.1.6",
     "@typescript-eslint/eslint-plugin": "^5.26.0",
     "@typescript-eslint/parser": "^5.26.0",
@@ -39,16 +35,22 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "^12.1.6",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^26.3.0",
+    "eslint-plugin-jsonc": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-testing-library": "^5.5.1",
+    "eslint-plugin-unicorn": "^43.0.0",
+    "eslint-plugin-yml": "^1.0.0",
+    "jsonc-eslint-parser": "^2.1.0",
     "prettier-plugin-tailwindcss": "^0.1.11"
   },
   "devDependencies": {
@@ -57,9 +59,9 @@
   },
   "peerDependencies": {
     "eslint": ">= 8.0.0",
-    "typescript": ">= 4.5.0",
+    "next": ">= 10.2.0",
     "prettier": ">= 2.6.2",
-    "next": ">= 10.2.0"
+    "typescript": ">= 4.5.0"
   },
   "engines": {
     "node": ">=16.0.0"

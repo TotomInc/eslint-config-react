@@ -19,7 +19,7 @@
 In order to work around [a known limitation in ESLint](https://github.com/eslint/eslint/issues/3458), we recommend you to use `@rushstack/eslint-patch` so that you don't have to manage ESLint dependencies by yourself.
 
 ```bash
-npm add --dev @totominc/eslint-config-react @rushstack/eslint-patch prettier eslint
+npm i --save-dev @totominc/eslint-config-react @rushstack/eslint-patch prettier eslint
 ```
 
 ## Usage

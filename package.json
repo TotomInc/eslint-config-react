@@ -54,8 +54,8 @@
     "prettier-plugin-tailwindcss": "^0.1.11"
   },
   "devDependencies": {
-    "eslint": "^8.16.0",
-    "prettier": "^2.6.2"
+    "eslint": "8.19.0",
+    "prettier": "2.7.1"
   },
   "peerDependencies": {
     "eslint": ">= 8.0.0",

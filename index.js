@@ -62,6 +62,9 @@ module.exports = {
 
     // Not needed since React v17.
     "react/react-in-jsx-scope": "off",
+    
+    // Disable since we use TypeScript to do typechecking on our props.
+    "react/require-default-props": "off",
 
     // Enable prettier rules.
     "prettier/prettier": "error",
